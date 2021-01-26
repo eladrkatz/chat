@@ -1,0 +1,65 @@
+
+* { font-family: 'Yusei Magic', sans-serif;}
+
+
+.chat-main {
+  display: grid; 
+  grid-template-columns: 300px auto;
+  position: absolute;
+  top:0; left:0; right:0; bottom: 0;  
+}
+
+.chat-main > div:nth-child(2) { border: solid 2px blue; position: relative; }
+
+/* #root div { border: solid 1px black; } */
+
+.contact { padding: 20px; cursor: pointer;}
+.contact.selected { background-color: cyan; }
+.contact:hover {  background-color: coral; }
+.contact.selected:hover { background-color: chartreuse; }
+
+.chat-messages {
+  overflow: auto;
+  left:0; right:0; top:0; bottom: 200px;
+  position: absolute;
+}
+
+.message-send-box { 
+  left:0; right:0; bottom: 0px;
+  height: 200px;
+  position: absolute;
+}
+
+.summary { font-size: smaller; color: gray; height: 20px}
+
+.from-me { background-color: red; position: relative; }
+.not-from-me { background-color: gray; position: relative;}
+
+.not-from-me > div::after { 	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: 0;
+	right: auto;
+	bottom: -20px;
+	border: 12px solid;
+  border-color: gray transparent transparent gray;
+}
+.from-me > div::after { 	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: 0px;
+	bottom: -20px;
+	border: 12px solid;
+  border-color: red red transparent transparent;
+}
+
+.message {
+  margin: 10px 10px 50px 10px;
+  padding: 20px;
+  color: white;
+  font-size: smaller;
+}
+
